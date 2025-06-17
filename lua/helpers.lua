@@ -213,7 +213,9 @@ end
 ---@param win number The window handle where the terminal will be opened.
 ---@return nil
 function M.start_lazydocker_job(win)
-  local job_id = vim.fn.termopen('lazydocker', {
+  --- local cmd = 'lazydocker'
+  local cmd = 'htop'
+  local job_id = vim.fn.termopen(cmd, {
     on_exit = function()
       __LazyDocker_Process_JobID = nil
       if _G.__LazyDocker_Window_Handle == win then
